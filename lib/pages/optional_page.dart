@@ -1,5 +1,7 @@
 //import 'package:college_syllabus/widgets/course_card.dart';
-import 'package:college_syllabus/pages/courses_pages.dart';
+import 'package:college_syllabus/pages/books.dart';
+import 'package:college_syllabus/pages/notes.dart';
+import 'package:college_syllabus/pages/pyq.dart';
 import 'package:college_syllabus/widgets/icon_onbook.dart';
 import 'package:flutter/material.dart';
 
@@ -10,17 +12,15 @@ class OptionalPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("College Material"),
+        title: const Text("College Material"),
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
             padding: const EdgeInsets.only(left: 18, bottom: 20, top: 22),
-            child: Container(
-              child: Text("Semesters",
-                  style: Theme.of(context).textTheme.titleLarge),
-            ),
+            child:
+                Text("Optional", style: Theme.of(context).textTheme.titleLarge),
           ),
           Expanded(
             child: Padding(
@@ -36,18 +36,26 @@ class OptionalPage extends StatelessWidget {
                       onTap: () => Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const CoursesPages())),
+                              builder: (context) => const Books())),
                       child: const IconOnbookCustomWidt(
                         icon: Icons.menu_book_outlined,
                         title: "Books",
                       )),
-                  const IconOnbookCustomWidt(
-                    icon: Icons.note_alt_outlined,
-                    title: "Notes",
+                  InkWell(
+                    onTap: () => Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => const Notes())),
+                    child: const IconOnbookCustomWidt(
+                      icon: Icons.note_alt_outlined,
+                      title: "Notes",
+                    ),
                   ),
-                  const IconOnbookCustomWidt(
-                    icon: Icons.speaker_notes_rounded,
-                    title: "PYQ",
+                  InkWell(
+                    onTap: () => Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => const Pyq())),
+                    child: const IconOnbookCustomWidt(
+                      icon: Icons.speaker_notes_rounded,
+                      title: "PYQ",
+                    ),
                   ),
                 ],
               ),

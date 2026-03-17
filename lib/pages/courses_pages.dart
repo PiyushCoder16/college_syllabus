@@ -15,10 +15,6 @@ class CoursesPages extends StatelessWidget {
         body: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           Container(
               padding: const EdgeInsets.only(left: 18, top: 22, bottom: 22),
-
-              ///color: Colors.yellow,
-              // height: 70,
-              // width: 150,
               child: Text("Courses",
                   style: Theme.of(context).textTheme.titleLarge)),
           Expanded(
